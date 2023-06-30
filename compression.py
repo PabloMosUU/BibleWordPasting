@@ -1,3 +1,6 @@
+"""
+Dumb but straightforward implementation of the computation of the shortest unseen subsequence lengths
+"""
 import sys
 
 def shortest_unseen_subsequence_lengths(sequence) -> list:

@@ -9,7 +9,6 @@ from typing import Iterator
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
 
 START_OF_VERSE_TOKEN = '<SOS>'
 END_OF_VERSE_TOKEN = '<EOS>'
@@ -113,24 +112,6 @@ class TokenizedBible:
         verse_tokens = {el.split('\t')[0]: el.split('\t')[1].strip() \
                         for el in lines[2:]}
         return TokenizedBible(language, original_filename, verse_tokens)
-
-    def split(self, hold_out_fraction: float, test_fraction: float) -> SplitData:
-        """
-        Split the data into a training set, a holdout set, and test set
-        :param hold_out_fraction: the fraction of all data that should go into holdout
-        :param test_fraction: the fraction of all data that should go into test
-        :return: an object containing the split data
-        """
-        train_and_hold_out_data, test_data = train_test_split(
-            list(self.verse_tokens.values()),
-            test_size = test_fraction if test_fraction > 0 else None
-        )
-        hold_out_fraction_of_dev = hold_out_fraction / (1 - test_fraction)
-        train_data, hold_out_data = train_test_split(
-            train_and_hold_out_data,
-            test_size = hold_out_fraction_of_dev
-        )
-        return SplitData(train_data, hold_out_data, test_data)
 
 
 class Bible:

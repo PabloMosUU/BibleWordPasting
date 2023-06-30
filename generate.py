@@ -1,3 +1,6 @@
+"""
+This code uses a trained LSTM language model to generate text
+"""
 import random
 
 import numpy as np

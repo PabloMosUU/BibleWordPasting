@@ -1,0 +1,14 @@
+chr	Cherokee
+deu	German
+eng	English
+esk	Iñupiatun
+grc	Koine Greek
+mya	Burmese
+qvw	Quechua
+tam	Tamil
+vie	Vietnamese
+xuo	Kuo
+zho*	Mandarin
+zul	Zulu
+
+*This is referred to as "cmn" in Koplenig et al (2017), but the ISO code found in the Parallel Bible Corpus is "zho"

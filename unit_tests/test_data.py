@@ -64,7 +64,7 @@ class TestData(unittest.TestCase):
         lines = comment_lines + ['40001001\tFirst verse', '40001002\tSecond verse', '40002001\tNext chapter', '41001001\tAnother book',
                  '67001001\tAnother testament']
         bible = data.parse_pbc_bible_lines(lines, True, 'eng')
-        by_testament, by_book, by_chapter = bible.join_by_toc()
+        _, by_testament, by_book, by_chapter, _ = bible.join_by_toc()
         self.assertTrue('old' not in by_testament)
         self.assertEqual('First verse_Second verse_Next chapter_Another book'.split('_'),
                          by_testament['new'])

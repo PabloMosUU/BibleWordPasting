@@ -1,3 +1,6 @@
+"""
+Full entropy calculations for PyTorch models
+"""
 from collections import Counter
 
 import torch.nn as nn
